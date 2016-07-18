@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	document.write("it works.")
+	document.write("it works. or does it")
 
 /***/ }
 /******/ ]);

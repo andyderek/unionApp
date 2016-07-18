@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/andyderek/unionApp#readme",
   "dependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.11.1",
     "express": "^4.14.0",
     "node": "0.0.0",
     "webpack": "^1.13.1"
