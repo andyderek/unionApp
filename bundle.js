@@ -7423,10 +7423,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// document.write("it works. or does it")
-
-
-	_reactDom2.default.render(_react2.default.createElement('jobInput', null), document.getElementById('app'));
+	_reactDom2.default.render(_react2.default.createElement(_jobInput2.default, null), document.getElementById('app'));
 
 /***/ },
 /* 75 */
@@ -35729,32 +35726,77 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var App = function (_React$Component) {
-		_inherits(App, _React$Component);
+	var JobsInput = function (_React$Component) {
+		_inherits(JobsInput, _React$Component);
 
-		function App() {
-			_classCallCheck(this, App);
+		function JobsInput() {
+			_classCallCheck(this, JobsInput);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(JobsInput).apply(this, arguments));
 		}
 
-		_createClass(App, [{
+		_createClass(JobsInput, [{
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
 					null,
-					'Markup Hello, World'
+					_react2.default.createElement(
+						'form',
+						null,
+						'Job Number: ',
+						_react2.default.createElement('input', { type: 'number' }),
+						_react2.default.createElement('br', null),
+						'Employer: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Payroll Company: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Show: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'RT Person: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Site: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'RT Location: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Day: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Call Backs: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Position: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Dress: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Contract: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Rate: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null),
+						'Steward: ',
+						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('br', null)
+					)
 				);
 			}
 		}]);
 
-		return App;
+		return JobsInput;
 	}(_react2.default.Component);
 
 	;
 
-	exports.default = App;
+	exports.default = JobsInput;
 
 /***/ }
 /******/ ]);

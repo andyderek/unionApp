@@ -1,10 +1,9 @@
-// document.write("it works. or does it")
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import JobInput from './jobInput';
+import JobInput from './jobInput/jobInput';
 
 ReactDOM.render(<JobInput/>, document.getElementById('app'));
