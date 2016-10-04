@@ -19,6 +19,8 @@ class JobsInput extends React.Component {
 				Contract: <input type="text"/><br/>
 				Rate: <input type="text"/><br/>
 				Steward: <input type="text"/><br/>
+				Paid in Full: <input type="checkbox"/><br/>
+				Partially Paid: <input type="checkbox"/><br/>
 				</form>
 			</div>			
 	};

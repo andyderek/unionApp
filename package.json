@@ -4,7 +4,8 @@
   "description": "A record keeping app for Local 16 members",
   "main": "bundle.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node DBserver.js"
   },
   "repository": {
     "type": "git",
