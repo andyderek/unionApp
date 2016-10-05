@@ -1,10 +1,25 @@
 import React from 'react';
+import JobInputSmart from './jobInputSmart';
 
 class JobsInput extends React.Component {
+
+	inputSubmit(e) {
+		e.preventDefault();
+		var porkChop = this.year.value;
+		console.log(porkChop);
+		fetch('http://localhost:3000/iatse', {
+			method: 'POST',
+			headers: {'content-type': 'application/json'},
+			body: JSON.stringify({
+				Year: porkChop
+			})
+		}).then(response => {console.log("what the fuck",response)})
+	}
+
 	render(){
 		return <div>
 				<form>
-				Year: <input type='text'/><br/>
+				Year: <input type='text' ref={(year) => this.year = year}/><br/>
 				Job Number: <input type='text'/><br/>
 				Employer: <input type='text'/><br/>
 				Payroll Company: <input type='text'/><br/>
@@ -21,6 +36,7 @@ class JobsInput extends React.Component {
 				Steward: <input type="text"/><br/>
 				Paid in Full: <input type="checkbox"/><br/>
 				Partially Paid: <input type="checkbox"/><br/>
+				<input type="submit" onClick={this.inputSubmit.bind(this)} value="Submit"/>
 				</form>
 			</div>			
 	};

@@ -5,5 +5,6 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import JobInput from './jobInput/jobInput';
+import JobInputSmart from './jobInput/jobInputSmart';
 
 ReactDOM.render(<JobInput/>, document.getElementById('app'));
