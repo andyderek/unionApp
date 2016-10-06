@@ -9,11 +9,12 @@ class JobsInput extends React.Component {
 		console.log(porkChop);
 		fetch('http://localhost:3000/iatse', {
 			method: 'POST',
-			headers: {'content-type': 'application/json'},
+			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
-				Year: porkChop
+				year: porkChop,
+				dog: "poop",
 			})
-		}).then(response => {console.log("what the fuck",response)})
+		})
 	}
 
 	render(){
