@@ -43,6 +43,7 @@ var jobSchema = new Schema({
     steward: String,
     paidInFull: Boolean,
     PartiallyPaid: Boolean,
+    notPaid: Boolean,
 });
 
 var Job = mongoose.model("Job", jobSchema);
@@ -70,6 +71,7 @@ app.post('/iatse', function(req, res){
   newJob.steward = req.body.steward;
   newJob.paidInFull = req.body.paidInFull;
   newJob.PartiallyPaid = req.body.partialPaid;
+  newJob.notPaid = req.body.notPaid;
 
   newJob.save(function(err){
     if(err){

@@ -27,6 +27,7 @@ class JobsInput extends React.Component {
 				steward: this.steward.value,
 				paidInFull: this.paid.checked,
 				partialPaid: this.partialPaid.checked,
+				notPaid: this.notPaid.checked,
 			})
 		}).then(res => console.log(res));
 	}
@@ -55,8 +56,9 @@ class JobsInput extends React.Component {
 				Contract: <input type="text" ref={(contract) => this.contract = contract}/><br/>
 				Rate: <input type="text" ref={(rate) => this.rate = rate}/><br/>
 				Steward: <input type="text" ref={(steward) => this.steward = steward}/><br/>
-				Paid in Full: <input type="checkbox" ref={(paid) => this.paid = paid}/><br/>
-				Partially Paid: <input type="checkbox" ref={(partialPaid) => this.partialPaid = partialPaid}/><br/>
+				Paid in Full: <input type="radio" name="PayStatus" ref={(paid) => this.paid = paid}/><br/>
+				Partially Paid: <input type="radio" name="PayStatus" ref={(partialPaid) => this.partialPaid = partialPaid}/><br/>
+				Not Paid: <input type='radio' name="PayStatus" ref={(notPaid) => this.notPaid = notPaid}/><br/>
 				<input type="submit" onClick={this.inputSubmit.bind(this)} value="Submit"/>
 				</form>
 			</div>			
