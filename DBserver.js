@@ -23,11 +23,10 @@ mongoose.connect('mongodb://localhost/iatse', function(err, db){
   }
 }); // connect to mongo database named iatse 
 
-
 var Schema = mongoose.Schema;
 
 var jobSchema = new Schema({
-    year: Number,
+    year: {type: Number, required: true},
     JobNumber: Number,
     Employer: String,
     PayrollCompany: String,
@@ -48,25 +47,33 @@ var jobSchema = new Schema({
 
 var Job = mongoose.model("Job", jobSchema);
 
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
-//   console.log("SUCCESS RICE")
-// });
-
-
 // app.use(express.static(path.join(__dirname, 'wageCalculator')));
 
-app.get('/iatse',function(req,res){
-  res.render('index')
-});
-
 app.post('/iatse', function(req, res){
+  res.send();
   var newJob = new Job();
+  
   newJob.year = req.body.year;
-  newJob.save(function(err, newJob){
+  newJob.JobNumber = req.body.jobNum;
+  newJob.Employer = req.body.employer;
+  newJob.PayrollCompany = req.body.payroll;
+  newJob.show = req.body.payroll;
+  newJob.RTPerson = req.body.rtPerson;
+  newJob.Site = req.body.site;
+  newJob.RTLocation = req.body.rtLocation;
+  newJob.Day = req.body.day;
+  newJob.callBacks = req.body.callBacks;
+  newJob.position = req.body.position;
+  newJob.dress = req.body.dress;
+  newJob.contract = req.body.contract;
+  newJob.rate = req.body.rate;
+  newJob.steward = req.body.steward;
+  newJob.paidInFull = req.body.paidInFull;
+  newJob.PartiallyPaid = req.body.partialPaid;
+
+  newJob.save(function(err){
     if(err){
-      console.log("oops", err)
+      console.log("%%%%%%%%%%%%%%",err.name,"%%%%%%%%%%%%%%%%%%%%")
     } else {
       console.log("Something good might have happened")
     }
