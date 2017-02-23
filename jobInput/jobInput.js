@@ -34,6 +34,13 @@ class JobsInput extends React.Component {
 		})
 	}
 
+	getTotals(){
+		console.log("The button has been pressed");
+		 fetch('http://localhost:3000/iatse')
+    	.then(response => response.json())
+    	.then(data => console.log('This is data ',data));
+	}
+
 
 	render(){
 		return <div>
@@ -56,9 +63,10 @@ class JobsInput extends React.Component {
 				Steward: <input type="text" ref={(steward) => this.steward = steward}/><br/>
 				Paid in Full: <input type="radio" name="PayStatus" ref={(paid) => this.paidInFull = paid}/><br/>
 				Partially Paid: <input type="radio" name="PayStatus" ref={(partiallyPaid) => this.partiallyPaid = partiallyPaid}/><br/>
-				Not Paid: <input type='radio' name="PayStatus" ref={(notPaid) => this.notPaid = notPaid}/><br/>
+				Not Paid: <input type='radio' name="PayStatus" defaultChecked ref={(notPaid) => this.notPaid = notPaid}/><br/>
 				<input type="submit" onClick={this.inputSubmit.bind(this)} value="Submit"/>
 				</form>
+				<button onClick={this.getTotals.bind(this)}>Press Here</button>
 			</div>			
 	};
 };

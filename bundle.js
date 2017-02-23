@@ -7421,6 +7421,10 @@
 
 	var _jobInput2 = _interopRequireDefault(_jobInput);
 
+	var _jobInputSmart = __webpack_require__(328);
+
+	var _jobInputSmart2 = _interopRequireDefault(_jobInputSmart);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(_jobInput2.default, null), document.getElementById('app'));
@@ -35718,6 +35722,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _jobInputSmart = __webpack_require__(328);
+
+	var _jobInputSmart2 = _interopRequireDefault(_jobInputSmart);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35736,56 +35744,144 @@
 		}
 
 		_createClass(JobsInput, [{
+			key: 'inputSubmit',
+			value: function inputSubmit(e) {
+				e.preventDefault();
+				fetch('http://localhost:3000/iatse', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						year: this.year.value,
+						jobNumber: this.jobNumber.value,
+						employer: this.employer.value,
+						payroll: this.payroll.value,
+						show: this.show.value,
+						rtPerson: this.rtPerson.value,
+						site: this.site.value,
+						rtLocation: this.rtLocation.value,
+						day: this.day.value,
+						date: this.date.value,
+						callBacks: this.callBacks.value,
+						position: this.position.value,
+						dress: this.dress.value,
+						contract: this.contract.value,
+						rate: this.rate.value,
+						steward: this.steward.value,
+						paymentStatus: {
+							paidInFull: this.paidInFull.checked,
+							partiallyPaid: this.partiallyPaid.checked,
+							notPaid: this.notPaid.checked
+						}
+					})
+				});
+			}
+		}, {
 			key: 'render',
 			value: function render() {
+				var _this2 = this;
+
 				return _react2.default.createElement(
 					'div',
 					null,
 					_react2.default.createElement(
 						'form',
 						null,
+						'Year: ',
+						_react2.default.createElement('input', { type: 'text', ref: function ref(year) {
+								return _this2.year = year;
+							} }),
+						_react2.default.createElement('br', null),
 						'Job Number: ',
-						_react2.default.createElement('input', { type: 'number' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(jobNumber) {
+								return _this2.jobNumber = jobNumber;
+							} }),
 						_react2.default.createElement('br', null),
 						'Employer: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(employer) {
+								return _this2.employer = employer;
+							} }),
 						_react2.default.createElement('br', null),
 						'Payroll Company: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(payroll) {
+								return _this2.payroll = payroll;
+							} }),
 						_react2.default.createElement('br', null),
 						'Show: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(show) {
+								return _this2.show = show;
+							} }),
 						_react2.default.createElement('br', null),
 						'RT Person: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(rtPerson) {
+								return _this2.rtPerson = rtPerson;
+							} }),
 						_react2.default.createElement('br', null),
 						'Site: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(site) {
+								return _this2.site = site;
+							} }),
 						_react2.default.createElement('br', null),
 						'RT Location: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(rtLocation) {
+								return _this2.rtLocation = rtLocation;
+							} }),
 						_react2.default.createElement('br', null),
 						'Day: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(day) {
+								return _this2.day = day;
+							} }),
+						_react2.default.createElement('br', null),
+						'Date: ',
+						_react2.default.createElement('input', { type: 'date', ref: function ref(date) {
+								return _this2.date = date;
+							} }),
 						_react2.default.createElement('br', null),
 						'Call Backs: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(callBacks) {
+								return _this2.callBacks = callBacks;
+							} }),
 						_react2.default.createElement('br', null),
 						'Position: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(position) {
+								return _this2.position = position;
+							} }),
 						_react2.default.createElement('br', null),
 						'Dress: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(dress) {
+								return _this2.dress = dress;
+							} }),
 						_react2.default.createElement('br', null),
 						'Contract: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(contract) {
+								return _this2.contract = contract;
+							} }),
 						_react2.default.createElement('br', null),
 						'Rate: ',
-						_react2.default.createElement('input', { type: 'text' }),
+						_react2.default.createElement('input', { type: 'text', ref: function ref(rate) {
+								return _this2.rate = rate;
+							} }),
 						_react2.default.createElement('br', null),
 						'Steward: ',
-						_react2.default.createElement('input', { type: 'text' }),
-						_react2.default.createElement('br', null)
+						_react2.default.createElement('input', { type: 'text', ref: function ref(steward) {
+								return _this2.steward = steward;
+							} }),
+						_react2.default.createElement('br', null),
+						'Paid in Full: ',
+						_react2.default.createElement('input', { type: 'radio', name: 'PayStatus', ref: function ref(paid) {
+								return _this2.paidInFull = paid;
+							} }),
+						_react2.default.createElement('br', null),
+						'Partially Paid: ',
+						_react2.default.createElement('input', { type: 'radio', name: 'PayStatus', ref: function ref(partiallyPaid) {
+								return _this2.partiallyPaid = partiallyPaid;
+							} }),
+						_react2.default.createElement('br', null),
+						'Not Paid: ',
+						_react2.default.createElement('input', { type: 'radio', name: 'PayStatus', defaultChecked: true, ref: function ref(notPaid) {
+								return _this2.notPaid = notPaid;
+							} }),
+						_react2.default.createElement('br', null),
+						_react2.default.createElement('input', { type: 'submit', onClick: this.inputSubmit.bind(this), value: 'Submit' })
 					)
 				);
 			}
@@ -35797,6 +35893,68 @@
 	;
 
 	exports.default = JobsInput;
+
+/***/ },
+/* 328 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(75);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _jobInput = __webpack_require__(327);
+
+	var _jobInput2 = _interopRequireDefault(_jobInput);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var JobInputSmart = function (_React$Component) {
+		_inherits(JobInputSmart, _React$Component);
+
+		function JobInputSmart() {
+			_classCallCheck(this, JobInputSmart);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(JobInputSmart).apply(this, arguments));
+		}
+
+		_createClass(JobInputSmart, [{
+			key: 'inputSubmit',
+			value: function inputSubmit(e) {
+				e.preventDefault();
+				var porkChop = this.year;
+				console.log(porkChop);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement('input', { type: 'button', onClick: this.inputSubmit })
+				);
+			}
+		}]);
+
+		return JobInputSmart;
+	}(_react2.default.Component);
+
+	;
+
+	exports.default = JobInputSmart;
 
 /***/ }
 /******/ ]);

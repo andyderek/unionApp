@@ -2,7 +2,6 @@ import React from 'react';
 import JobsInput from './jobInput';
 
 
-
 class JobInputSmart extends React.Component{
 
 	inputSubmit(e) {
@@ -17,5 +16,6 @@ class JobInputSmart extends React.Component{
 		</div>
 	};
 };
+
 
 export default JobInputSmart;

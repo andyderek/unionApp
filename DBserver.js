@@ -51,9 +51,11 @@ var jobSchema = new Schema({
 
 var Job = mongoose.model("Job", jobSchema);
 
+var newJob = new Job();
+
 app.post('/iatse', function(req, res){
   res.send();
-  var newJob = new Job();
+  // var newJob = new Job();
   for(var key in newJob) {
     for(var key2 in req.body){
       if(key === key2){
@@ -70,6 +72,18 @@ app.post('/iatse', function(req, res){
     }
   })
 });
+
+app.get('/iatse', function(req, res){
+  console.log("A GET request has been made.")
+  Job.find({}, function(err, jobs){
+    if(err){
+      console.log("this is where you fucked up", err)
+      res.send(err)
+    }
+    res.json(jobs);
+  })
+});
+
 
 var port = 3000;
 app.listen(port, function(){
