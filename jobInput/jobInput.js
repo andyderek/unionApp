@@ -1,38 +1,7 @@
 import React from 'react';
-import JobInputSmart from './jobInputSmart';
+import inputSubmit from './jobInputSmart';
 
 class JobsInput extends React.Component {
-
-	inputSubmit(e) {
-		e.preventDefault();
-		fetch('http://localhost:3000/iatse', {
-			method: 'POST',
-			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({
-				year: this.year.value,
-				jobNumber: this.jobNumber.value,
-				employer: this.employer.value,
-				payroll: this.payroll.value,
-				show: this.show.value,
-				rtPerson: this.rtPerson.value,
-				site: this.site.value,
-				rtLocation: this.rtLocation.value,
-				day: this.day.value,
-				date: this.date.value,
-				callBacks: this.callBacks.value,
-				position: this.position.value,
-				dress: this.dress.value,
-				contract: this.contract.value,
-				rate: this.rate.value,
-				steward: this.steward.value,
-				paymentStatus: {
-						paidInFull: this.paidInFull.checked,
-						partiallyPaid: this.partiallyPaid.checked,
-						notPaid: this.notPaid.checked
-					},
-			})
-		})
-	}
 
 	getTotals(){
 		console.log("The button has been pressed");
@@ -64,7 +33,7 @@ class JobsInput extends React.Component {
 				Paid in Full: <input type="radio" name="PayStatus" ref={(paid) => this.paidInFull = paid}/><br/>
 				Partially Paid: <input type="radio" name="PayStatus" ref={(partiallyPaid) => this.partiallyPaid = partiallyPaid}/><br/>
 				Not Paid: <input type='radio' name="PayStatus" defaultChecked ref={(notPaid) => this.notPaid = notPaid}/><br/>
-				<input type="submit" onClick={this.inputSubmit.bind(this)} value="Submit"/>
+				<input type="submit" onClick={inputSubmit.bind(this)} value="Submit"/>
 				</form>
 				<button onClick={this.getTotals.bind(this)}>Press Here</button>
 			</div>			

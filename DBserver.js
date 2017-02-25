@@ -3,6 +3,7 @@ var express     = require('express'),
     path        = require('path');
     bodyParser  = require('body-parser');
     app         = express();
+    jobsDB      = require('./DB/jobsDB');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -23,39 +24,9 @@ mongoose.connect('mongodb://localhost/iatse', function(err, db){
   }
 }); 
 
-var Schema = mongoose.Schema;
-
-var jobSchema = new Schema({
-    year: {type: Number, required: true},
-    jobNumber: Number,
-    employer: String,
-    payroll: String,
-    show: String,
-    rtPerson: String,
-    site: String,
-    rtLocation: String,
-    day: String,
-    date: String,
-    callBacks: String,
-    position: String,
-    dress: String,
-    contract: String,
-    rate: Number,
-    steward: String,
-    paymentStatus: {
-      paidInFull: Boolean,
-      partiallyPaid: Boolean,
-      notPaid: Boolean
-    },
-});
-
-var Job = mongoose.model("Job", jobSchema);
-
-var newJob = new Job();
-
 app.post('/iatse', function(req, res){
   res.send();
-  // var newJob = new Job();
+  var newJob = new jobsDB();
   for(var key in newJob) {
     for(var key2 in req.body){
       if(key === key2){
@@ -75,7 +46,7 @@ app.post('/iatse', function(req, res){
 
 app.get('/iatse', function(req, res){
   console.log("A GET request has been made.")
-  Job.find({}, function(err, jobs){
+  jobsDB.find({}, function(err, jobs){
     if(err){
       console.log("this is where you fucked up", err)
       res.send(err)
