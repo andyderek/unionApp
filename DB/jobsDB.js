@@ -1,14 +1,5 @@
 var mongoose = require('mongoose');
 
-
-// mongoose.connect('mongodb://localhost/iatse', function(err, db){
-//   if(err){
-//     console.log(err)
-//   } else {
-//     console.log("Cobra vs mongoose")
-//   }
-// }); 
-
 var Schema = mongoose.Schema;
 
 var jobSchema = new Schema({
