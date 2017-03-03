@@ -1,5 +1,4 @@
 var express     = require('express'),
-    mongoose    = require('mongoose'),
     path        = require('path');
     bodyParser  = require('body-parser');
     app         = express();
@@ -15,15 +14,6 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-mongoose.connect('mongodb://localhost/iatse', function(err, db){
-  if(err){
-    console.log(err)
-  } else {
-    console.log("Cobra vs mongoose")
-  }
-}); 
-
 app.post('/iatse', function(req, res){
   res.send();
   var newJob = new jobsDB();
@@ -37,7 +27,7 @@ app.post('/iatse', function(req, res){
 
   newJob.save(function(err){
     if(err){
-      console.log("%%%%%%%%%%%%%%",err.name,"%%%%%%%%%%%%%%%%%%%%")
+      console.log("%%%%%%%%%%%%%%",err,"%%%%%%%%%%%%%%%%%%%%")
     } else {
       console.log("Something good might have happened")
     }
@@ -55,10 +45,10 @@ app.get('/iatse', function(req, res){
   })
 });
 
+//db.jobs.findAndModify({query: {_id : ObjectId("58b98b2a04151c0aea376623")}, update: {$set: {hours: {"Friday": 18,"Monday": 19}}}})
+// db.jobs.findAndModify({query: {_id : ObjectId("58b9d0729e17c70b94a1e555")}, update: {$push: {hours: {"Sunday":"Praise the Lord!"}}}})
 
 var port = 3000;
 app.listen(port, function(){
   console.log("server running on port ", port);
 });
-
-// module.exports = app;

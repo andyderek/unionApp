@@ -24,8 +24,17 @@ var jobSchema = new Schema({
       partiallyPaid: Boolean,
       notPaid: Boolean
     },
+    hours: Array,
 });
 
 var jobsDB = mongoose.model("Job", jobSchema);
+
+var dbConnect = mongoose.connect('mongodb://localhost/iatse', function(err, db){
+  if(err){
+    console.log(err)
+  } else {
+    console.log("Cobra vs mongoose")
+  }
+}); 
 
 module.exports = jobsDB;

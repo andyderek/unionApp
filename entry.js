@@ -5,5 +5,6 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import JobInput from './jobInput/jobInput';
+import HoursInput from './hoursInput/hoursInput';
 
-ReactDOM.render(<JobInput/>, document.getElementById('app'));
+ReactDOM.render(<HoursInput/>, document.getElementById('app'));
