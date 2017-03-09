@@ -5,6 +5,12 @@ class HoursInput extends Component {
   render() {
     return (
       <div>
+      <div>
+      Job # <i>FAKE</i><br/>
+      Show <i>FAKE SHOW</i><br/>
+      Location <i>FAKE LOCATION</i><br/>
+      Regular Hours: <i>FAKE HOURS</i><br/>
+      </div><br/>
         <form>
           <table>
             <tbody>
@@ -12,35 +18,17 @@ class HoursInput extends Component {
                 <th>Date</th>
                   <td>
                     <input type='date' ref={(date) => this.date1 = date}/>
-                    <input type='date'ref={(date) => this.date2 = date}/>
-                    <input type='date'/>
-                    <input type='date'/>
-                    <input type='date'/>
-                    <input type='date'/>
-                    <input type='date'/>
                   </td>
               </tr>
               <tr>
                 <th>Reg</th>
                   <td>
                     <input ref={(reg) => this.reg1 = reg}/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
                   </td>
               </tr>
               <tr>
                 <th>OT</th>
                   <td>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
                     <input/>
                   </td>
               </tr>
@@ -48,35 +36,17 @@ class HoursInput extends Component {
                 <th>DT</th>
                   <td>
                     <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
                   </td>
               </tr>
               <tr>
                 <th>Show</th>
                   <td>
                     <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
                   </td>
               </tr>
               <tr>
                 <th>MP</th>
                   <td>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
-                    <input/>
                     <input/>
                   </td>
               </tr>   

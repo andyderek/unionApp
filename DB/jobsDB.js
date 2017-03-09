@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var jobSchema = new Schema({
-    year: {type: Number, required: true},
+    year: Number, /*{type: Number, required: true},*/
     jobNumber: Number,
     employer: String,
     payroll: String,

@@ -20,6 +20,7 @@ app.post('/iatse', function(req, res){
   for(var key in newJob) {
     for(var key2 in req.body){
       if(key === key2){
+        console.log(req.body[key2]);
         newJob[key] = req.body[key2]
       }
     };
